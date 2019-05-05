@@ -1,0 +1,876 @@
+{
+	"info": {
+		"_postman_id": "94ad33e6-3670-4494-9966-357e171282a1",
+		"name": "Bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "REST list all books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/books",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get book by isbn",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/book/66666",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"book",
+						"66666"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check isbn",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/book/checkisbn/66666",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"book",
+						"checkisbn",
+						"66666"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Titel suchen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/books/search/Angular",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"books",
+						"search",
+						"Angular"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST suche Book über Autor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/books/search/huber",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"books",
+						"search",
+						"huber"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Buch speichern",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9ib29rc3RvcmUxOS5zMTYxMDQ1NjAwNC5zdHVkZW50Lmt3bWhnYi5hdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU1NTY4MzYzMiwiZXhwIjoxNTU1Njg3MjMyLCJuYmYiOjE1NTU2ODM2MzIsImp0aSI6Im9iZFBRdm0yUTJZV3JxWFkiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJ1c2VyIjp7ImlkIjoxfX0.TkoZzLzhKEJSaDx9K4X0BtMaKuFyjxhf1IYnvF5UD2E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"isbn\":\"1234567893\",\r\n  \"title\":\"Drittes neues Buch\", \r\n  \"user_id\": 1, \r\n  \"rating\" : 3,\r\n  \"authors\":[{\r\n    \"id\":3,\r\n    \"firstName\":\"Karl\",\r\n    \"lastName\":\"Huber\"\r\n   },\r\n   {\r\n    \"id\":4,\r\n    \"firstName\":\"Johannes\",\r\n    \"lastName\":\"Schönböck\"\r\n   }],\r\n  \"published\":\"2018-01-01T23:00:00.000Z\",\r\n  \"subtitle\":\"Wir lernen dann Angular\",\r\n  \"images\":[{\r\n\"url\":\"https://images-na.ssl-images-amazon.com/images/I/51H--PJcVNL._SX342_BO1,204,203,200_.jpg\",\r\n    \"title\":\"Angular 4\"},\r\n    {\r\n\"url\":\"https://images-na.ssl-images-amazon.com/images/I/514Q%2BCZgjjL._SY400_.jpg\",\r\n    \"title\":\"Angular\"\r\n    }],\r\n  \"description\":\"Lorem ipsum dolor sit amet\"}"
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/book",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST Buch updaten",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"isbn\":\"1111111111\",\r\n  \"title\":\"Erstes neues Buch - update 1\", \r\n  \"user_id\": 1, \r\n  \"rating\" : 3,\r\n  \"authors\":[{\r\n    \"id\":3,\r\n    \"firstName\":\"Karl\",\r\n    \"lastName\":\"Huber\"\r\n   },\r\n   {\r\n    \"id\":4,\r\n    \"firstName\":\"Johannes\",\r\n    \"lastName\":\"Schönböck\"\r\n   }],\r\n  \"published\":\"2018-01-01T23:00:00.000Z\",\r\n  \"subtitle\":\"Wir lernen dann Angular - update 1\",\r\n  \"images\":[{\r\n\"url\":\"https://images-na.ssl-images-amazon.com/images/I/51H--PJcVNL._SX342_BO1,204,203,200_.jpg\",\r\n    \"title\":\"Angular 4\"},\r\n    {\r\n\"url\":\"https://images-na.ssl-images-amazon.com/images/I/514Q%2BCZgjjL._SY400_.jpg\",\r\n    \"title\":\"Angular\"\r\n    },\r\n    {\r\n\"url\":\"https://images-na.ssl-images-amazon.com/images/I/514Q%2BCZgjjL._SY400_.jpg\",\r\n    \"title\":\"Angular\"\r\n    }],\r\n  \"description\":\"Lorem ipsum dolor sit amet\"}"
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/book/24543444678342430",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"book",
+						"24543444678342430"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST buch löschen",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/book/66666",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"book",
+						"66666"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"test@gmail.com\",\n\t\"password\": \"secret\"\n}"
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST create order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\": 1,\n  \"addressId\": 1,\n  \"books\": [{\n\t\"id\": 1,\n\t\"title\":\"Harry Potter\",\n\t\"price\": 49.99,\n\t\"count\": 1 \n  }, {\n\t\"id\": 2,\n\t\"title\":\"Herr der Ringe\",\n\t\"price\": 39.99,\n\t\"count\": 1\n  }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/order",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST list all orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get orders by state",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9ib29rc3RvcmUxOS5zMTYxMDQ1NjAwNC5zdHVkZW50Lmt3bWhnYi5hdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU1NTc1MDYyNSwiZXhwIjoxNTU1NzU0MjI1LCJuYmYiOjE1NTU3NTA2MjUsImp0aSI6IkV0TlhZeHJHZ0NSTFJEMUEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJ1c2VyIjp7ImlkIjoxfX0.806722k9ewWU8BOXpYoxqo7OaZLFp4Olx_Y7lWHGB7U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/orders/1",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get orders by username",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9ib29rc3RvcmUxOS5zMTYxMDQ1NjAwNC5zdHVkZW50Lmt3bWhnYi5hdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU1NTc1MDYyNSwiZXhwIjoxNTU1NzU0MjI1LCJuYmYiOjE1NTU3NTA2MjUsImp0aSI6IkV0TlhZeHJHZ0NSTFJEMUEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJ1c2VyIjp7ImlkIjoxfX0.806722k9ewWU8BOXpYoxqo7OaZLFp4Olx_Y7lWHGB7U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/orders/findByUsername/MelanieBrunner",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"orders",
+						"findByUsername",
+						"MelanieBrunner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get orders by userId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9ib29rc3RvcmUxOS5zMTYxMDQ1NjAwNC5zdHVkZW50Lmt3bWhnYi5hdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU1NTc1MDYyNSwiZXhwIjoxNTU1NzU0MjI1LCJuYmYiOjE1NTU3NTA2MjUsImp0aSI6IkV0TlhZeHJHZ0NSTFJEMUEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJ1c2VyIjp7ImlkIjoxfX0.806722k9ewWU8BOXpYoxqo7OaZLFp4Olx_Y7lWHGB7U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/orders/findByUsername/MelanieBrunner",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"orders",
+						"findByUsername",
+						"MelanieBrunner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get books from order by orderid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/orders/findBooksByOrderid/1",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"orders",
+						"findBooksByOrderid",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST update state",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9ib29rc3RvcmUxOS5zMTYxMDQ1NjAwNC5zdHVkZW50Lmt3bWhnYi5hdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU1NTc2MTQyMiwiZXhwIjoxNTU1NzY1MDIyLCJuYmYiOjE1NTU3NjE0MjIsImp0aSI6IjI2UHNCMzI2TXpGSWxLdmUiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJ1c2VyIjp7ImlkIjoxfX0.W5MvzkIBxJZ-zNpQhSieFTX1Ow56WZqrOdZlrmnXFgk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"state\": 2,\n\t\"comment\":\"Ihre Bestellung wird bearbeitet.\",\n\t\"comment_admin\": \"Die Bestellung wurde vom Packetdienstleister angenommen\"\n}"
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/update/4",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get state from order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get ordered list from orders desc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get ordered list from orders asc",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9ib29rc3RvcmUxOS5zMTYxMDQ1NjAwNC5zdHVkZW50Lmt3bWhnYi5hdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU1NTc2NTczNSwiZXhwIjoxNTU1NzY5MzM1LCJuYmYiOjE1NTU3NjU3MzUsImp0aSI6InllTFFIdlgwR1lZelZnTXEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJ1c2VyIjp7ImlkIjoxfX0.1KucE9RWbTKixydGMYsAvtesnBedXin4bY6g1RccchY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/order/orderedAsc",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"order",
+						"orderedAsc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get current user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/user",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get orderlog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/orderlog",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"orderlog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get order with id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/order/1",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"order",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get filtered orders from user by state",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9ib29rc3RvcmUxOS5zMTYxMDQ1NjAwNC5zdHVkZW50Lmt3bWhnYi5hdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU1NjcyNDkyMywiZXhwIjoxNTU2NzI4NTIzLCJuYmYiOjE1NTY3MjQ5MjMsImp0aSI6Ik9uajNwNWJFNmZBNTZRTEQiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJ1c2VyIjp7ImlkIjoxfX0.kj0bJado1dHkoqUzQwIQVBn2N2CaLXEIsVl5PQO1GBY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/orders/filterByState/2/0",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"orders",
+						"filterByState",
+						"2",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get address from user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/user/2",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get SalesTax",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/salesTax",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"salesTax"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REST get price of book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://bookstore19.s1610456004.student.kwmhgb.at/api/book/getPrice/6666666666",
+					"protocol": "http",
+					"host": [
+						"bookstore19",
+						"s1610456004",
+						"student",
+						"kwmhgb",
+						"at"
+					],
+					"path": [
+						"api",
+						"book",
+						"getPrice",
+						"6666666666"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9ib29rc3RvcmUxOS5zMTYxMDQ1NjAwNC5zdHVkZW50Lmt3bWhnYi5hdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU1NDcwOTE1NiwiZXhwIjoxNTU0NzEyNzU2LCJuYmYiOjE1NTQ3MDkxNTYsImp0aSI6Ilp4VXZiQ2lTR21IZ1hDTkIiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJ1c2VyIjp7ImlkIjoxfX0.M3MaUpseHQoqTVhK7hwg7r2FibGOFAqdNQxfqQyQPEU",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a81ff728-471d-4e07-acd1-08db78ab197a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "78307c02-5d7c-4e4a-8c6c-e7f8379c8dc2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
